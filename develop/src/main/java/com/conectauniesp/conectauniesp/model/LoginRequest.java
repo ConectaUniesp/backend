@@ -7,10 +7,7 @@ import lombok.Setter;
 
 @Getter
 @Setter
-@Entity
 public class LoginRequest {
-
-
     private String matriculaOuEmail;
     private String senha;
 }

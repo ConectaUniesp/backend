@@ -2,11 +2,14 @@ package com.conectauniesp.conectauniesp.service;
 
 import com.conectauniesp.conectauniesp.model.User;
 import com.conectauniesp.conectauniesp.repository.UserRepository;
+import lombok.AllArgsConstructor;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+@AllArgsConstructor
 @Service
 public class UserService {
+
     @Autowired
     private UserRepository userRepository;
 
