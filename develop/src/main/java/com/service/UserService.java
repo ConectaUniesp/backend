@@ -13,6 +13,9 @@ public class UserService {
     @Autowired
     private UserRepository userRepository;
 
+    public void create(User user){
+        userRepository.save(user);
+    }
 
     public User login(String matriculaOuEmail, String senha) {
         User user = userRepository.findByMatriculaOrEmail(matriculaOuEmail, matriculaOuEmail);
