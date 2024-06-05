@@ -3,10 +3,9 @@ package br.com.redeuniesp.api.controller;
 import br.com.redeuniesp.api.model.Conteudo;
 import br.com.redeuniesp.api.service.ConteudoService;
 import lombok.AllArgsConstructor;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
+
+import java.util.List;
 
 @AllArgsConstructor
 @RestController
@@ -17,5 +16,20 @@ public class ConteudoController {
     @PostMapping
     public Conteudo salvar(@RequestBody Conteudo conteudo){
         return service.salvar(conteudo);
+    }
+
+    @PutMapping
+    public Conteudo atualizar(Conteudo conteudo){
+        return service.atualizar(conteudo);
+    }
+
+    @DeleteMapping
+    public void delete(Conteudo conteudo){
+        service.delete(conteudo);
+    }
+
+    @GetMapping
+    public List<Conteudo> listarPosts(){
+        return service.listarPosts();
     }
 }
